@@ -6,7 +6,7 @@ Main Page
 @section('content')
 
 <div class="card m-2 align-self-end shadow">
-    <h4 class="card-header  text-white" style="background-color: rgb(20, 88, 99) "> People </h4>
+    <h4 class="card-header  text-white" style="background-color: rgb(20, 88, 99) "> Detail </h4>
     <div class="table-wrap">
         <table class="table table-striped caption-top table-hover">
             <thead>
