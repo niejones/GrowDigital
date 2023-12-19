@@ -17,4 +17,4 @@ use App\Http\Controllers\PersonController;
 //     return view('welcome');
 // });
 Route::get('/', [PersonController::class, 'index'])->name('welcome');
-Route::get('/person', [PersonController::class, 'show'])->name('personDetail');
+Route::get('/person/{person}', [PersonController::class, 'show'])->name('persons.show');

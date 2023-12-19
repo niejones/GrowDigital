@@ -14,21 +14,14 @@ class PersonSeeder extends Seeder
      */
     public function run()
     {
-        $p = new Person;
-        $p->name = "Alice";
-        $p->age = 20;
-        $p->save();
-        $p = new Person;
-        $p->name = "Bob";
-        $p->age = 25;
-        $p->save();
-        $p = new Person;
-        $p->name = "Carol";
-        $p->age = 30;
-        $p->save();
-        $p = new Person;
-        $p->name = "Dave";
-        $p->age = 35;
-        $p->save();
+        $this->createUser('Alice', 20);
+        $this->createUser('Bob', 25);
+        $this->createUser('Alice', 20);
+        $this->createUser('Alice', 20);
+    }
+
+    private function createUser($name, $age)
+    {
+        return Person::create(compact('name', 'age'));
     }
 }

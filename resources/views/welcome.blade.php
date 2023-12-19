@@ -19,7 +19,11 @@ Main Page
             <tbody>
                 @foreach ($people as $person)
                     <tr>
-                        <td> {{ $person->name }}</td>
+                        <td>
+                            <a href="{{ route('persons.show', $person) }}">
+                              {{ $person->name }}
+                            </a>
+                        </td>
                         <td>{{ $person->age }}</td>
                         <td>
                        

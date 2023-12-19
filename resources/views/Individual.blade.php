@@ -16,21 +16,16 @@ Main Page
                 </tr>
             </thead>
             <tbody>
-                @foreach ($person as $per)
+                
                     <tr>
-                        <td> {{ $per->name }}</td>
-                        <td>{{ $per->age }}</td>
+                        <td> {{ $person->name }}</td>
+                        <td>{{ $person->age }}</td>
                     </tr>
-                @endforeach
+                
             </tbody>
         </table>
 
     </div>
-</div>
-<div class="d-flex justify-content-center">
-    <ul class="pagination">
-        {{ $person->links() }}
-    </ul>
 </div>
 
 @endsection

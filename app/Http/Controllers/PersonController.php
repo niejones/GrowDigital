@@ -16,16 +16,20 @@ class PersonController extends Controller
         $people = Person::all();
 
         $average = PersonController::averageAge($people);
+
         $max = $people->where('age')->max();
         $min = $people->where('age')->min();
-        return view('welcome',['people'=>$people,'average'=>$average,'max'=>$max,'min'=>$min]);
+        // return view('welcome',['people'=>$people,'average'=>$average,'max'=>$max,'min'=>$min]);
+        
+        return view('welcome', compact('people', 'max', 'min', 'average'));
+
     }
 
     private function averageAge($people){
         $average = 0;
         foreach($people as $person)
-            $average = $average + $person->age;
-        return $average/count($people);
+            $average += $person->age;
+        return $average / $people->count();
     }
 
     /**
@@ -55,11 +59,9 @@ class PersonController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show(Person $person)
     {
-        $person = Person::orderBy('updated_at','desc')->paginate(1);
-
-        return view('Individual',['person'=>$person]);
+        return view('Individual', compact('person'));
     }
 
     /**
